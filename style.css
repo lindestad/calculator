@@ -7,4 +7,64 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    font-family: monospace;
+}
+
+#calculator-container {
+    border: solid;
+    height: 600px;
+    width: 450px;
+}
+
+#screen {
+    border: solid red;
+    margin: 32px;
+    height: 140px;
+}
+
+#small-line {
+    background-color: blue;
+    text-align: right;
+    margin: 10px 10px 5px 10px;
+    font-size: 24px;
+    height: 2em;
+}
+
+#large-line {
+    background-color: blue;
+    text-align: right;
+    margin: 10px;
+    font-size: 56px;
+    height: 1em;
+}
+
+#keypad-top{
+    display: flex;
+    flex: wrap;
+}
+
+#keypad-bottom {
+    display: flex;
+}
+
+#function-row-1, #number-button-container, #function-row-2 {
+    border: solid green;
+}
+
+#function-row-1 {
+    width: 100%;
+    margin: 0px 24px;
+    height: 90px;
+}
+
+#function-row-2 {
+    width: 100px;
+    margin: 24px 24px 0px 10px;
+    height: 240px;
+}
+
+#number-button-container {
+    width: 280px;
+    margin: 24px 0px 4px 24px;
+    height: 240px;
 }
