@@ -69,3 +69,12 @@ x.appendChild(testbutton);
 testbutton = createButton('112');
 const x2 = document.getElementById('function-row-1');
 x2.appendChild(testbutton);
+
+
+// TODO best to move this to a class?
+const display = {
+    topDisplayStr : '',
+    botDisplayStr : '0',
+    activeNum : 0,
+    activeOperator : null,
+}
