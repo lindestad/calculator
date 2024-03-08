@@ -36,47 +36,68 @@ function updateDisplay(char) {
         // TODO handle input beyond max length?
     }
     
+    const operatorList = operators.keys.join('');
+    const displayState = {
+        topText : topLine.textContent,
+        botText : botLine.textContent,
+        activeOperation : null,
+    }
+    // move to ternary statement?
+    if (operatorList.includes(displayState.topText[-1])) {
+        displayState.activeOperation = displayState.topText[-1];
+    }
 
+    
     // display can get state of operation from topline
-    // if number ->
+    
+    if ("0123456789".includes(char)) { // numeric
         // last character was operator ->
             // clear line, enter new char, move last line to top
         // else -> append char to line
-    // if operator ->
-        // if last charactar was operator -> 
-            // clear last character, replace with new in topline
-        // if not ->
-            // move move to topline with operator
+    } else if (operatorList.includes(char)) {// if operator ->
+            if (displayState.activeOperation != null){ // if last charactar was operator -> 
+                if (displayState.botText === '') {}
+                // do operation
+                // clear last character, replace with new in topline
+            } else {// if not ->
+                displayState.topText = displayState.botText + char;// move move to topline with operator
+            }
+    } else { // not a valid input
+        throw new Error("Invalid input given to updateDisplay() - not a number or a supported operator.");
+    }
+        
+    
+        
 
     // TODO evaluate if some calculation should be executed
 
     return;
 }
 
-function createButton(text) {
-    const button = document.createElement('button');
-    button.className = "keypad-button";
-    button.id = text;
-    button.textContent = text;
-    const charObj = {
-        text : text,
-        operator : text.operator == undefined ? null : text.operator,
-    }
+// function createButton(text) {
+//     const button = document.createElement('button');
+//     button.className = "keypad-button";
+//     button.id = text;
+//     button.textContent = text;
+//     const charObj = {
+//         text : text,
+//         operator : text.operator == undefined ? null : text.operator,
+//     }
 
-    button.addEventListener('click', () => updateDisplay(text));
-    return button;
-}
+//     button.addEventListener('click', () => updateDisplay(text));
+//     return button;
+// }
 
-function populatebuttons(operators){
-    const functionRowOne = document.getElementById("function-row-1");
-    const functionRowTwo = document.getElementById("function-row-2");
-    const keypad = document.getElementById("number-button-container");
-    for (let i = 0; i<9; i++) {
-        if (i<5) {
-            functionRowTwo.appendChild(Object.keys(operators)[i])
-        }
-    }
-}
+// function populatebuttons(operators){
+//     const functionRowOne = document.getElementById("function-row-1");
+//     const functionRowTwo = document.getElementById("function-row-2");
+//     const keypad = document.getElementById("number-button-container");
+//     for (let i = 0; i<9; i++) {
+//         if (i<5) {
+//             functionRowTwo.appendChild(Object.keys(operators)[i])
+//         }
+//     }
+// }
 
 let testbutton = createButton('12');
 const x = document.getElementById('function-row-1');
@@ -99,4 +120,12 @@ const functionButtonsTop = {
     clearDisplay : {
         text : 'C',
     }
+}
+
+
+// three possible parts - num, operator, num2.
+// operator can change the look of num
+
+function calculate(a, b, operator, wrappingFunction) {
+
 }

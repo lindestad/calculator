@@ -23,7 +23,6 @@ body {
 }
 
 #small-line {
-    background-color: blue;
     text-align: right;
     margin: 10px 10px 5px 10px;
     font-size: 24px;
@@ -31,7 +30,6 @@ body {
 }
 
 #large-line {
-    background-color: blue;
     text-align: right;
     margin: 10px;
     font-size: 56px;
@@ -39,7 +37,23 @@ body {
 }
 
 #button-container {
-    border: solid green;
-    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px 24px;
+    width: 402px;
     height: 360px;
+    gap: 5px;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 95px;
+}
+
+#zero {
+    width: 200px;
 }
