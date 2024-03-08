@@ -37,6 +37,15 @@ function updateDisplay(char) {
     }
     
 
+    // display can get state of operation from topline
+    // if number ->
+        // last character was operator ->
+            // clear line, enter new char, move last line to top
+        // else -> append char to line
+    // if operator ->
+        // if last charactar was operator ->
+            // clear last character, 
+
     // TODO evaluate if some calculation should be executed
 
     return;
@@ -47,6 +56,11 @@ function createButton(text) {
     button.className = "keypad-button";
     button.id = text;
     button.textContent = text;
+    const charObj = {
+        text : text,
+        operator : text.operator == undefined ? null : text.operator,
+    }
+
     button.addEventListener('click', () => updateDisplay(text));
     return button;
 }
@@ -78,3 +92,11 @@ const display = {
     activeNum : 0,
     activeOperator : null,
 }
+
+const functionButtonsTop = {
+    clearDisplay : {
+        text : 'C',
+    }
+}
+
+function buttonInnerfunctionConstructor(text, func, )
