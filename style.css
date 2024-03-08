@@ -38,33 +38,8 @@ body {
     height: 1em;
 }
 
-#keypad-top{
-    display: flex;
-    flex: wrap;
-}
-
-#keypad-bottom {
-    display: flex;
-}
-
-#function-row-1, #number-button-container, #function-row-2 {
+#button-container {
     border: solid green;
-}
-
-#function-row-1 {
     width: 100%;
-    margin: 0px 24px;
-    height: 90px;
-}
-
-#function-row-2 {
-    width: 100px;
-    margin: 24px 24px 0px 10px;
-    height: 240px;
-}
-
-#number-button-container {
-    width: 280px;
-    margin: 24px 0px 4px 24px;
-    height: 240px;
+    height: 360px;
 }

@@ -43,8 +43,10 @@ function updateDisplay(char) {
             // clear line, enter new char, move last line to top
         // else -> append char to line
     // if operator ->
-        // if last charactar was operator ->
-            // clear last character, 
+        // if last charactar was operator -> 
+            // clear last character, replace with new in topline
+        // if not ->
+            // move move to topline with operator
 
     // TODO evaluate if some calculation should be executed
 
@@ -98,5 +100,3 @@ const functionButtonsTop = {
         text : 'C',
     }
 }
-
-function buttonInnerfunctionConstructor(text, func, )
