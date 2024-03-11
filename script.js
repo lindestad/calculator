@@ -68,13 +68,18 @@ function handleNumber(number) {
 }
 
 function handleOperation(operation) {
+    let symbol = operation; // Default to the operation itself
+    if (operation === '*') {
+        symbol = '×'; // Replace * with × for display
+    } else if (operation === '/') {
+        symbol = '÷'; // Replace / with ÷ for display
+    }
+
     if (calculatorState.awaitingNewInput && calculatorState.currentOperation) {
-        // Replace the last operation in the string if the user changes their mind
-        calculatorState.operationString = calculatorState.operationString.slice(0, -1) + operation;
+        calculatorState.operationString = calculatorState.operationString.slice(0, -1) + symbol;
     } else {
-        // Append the current value and the operation to the operation string
         calculatorState.previousValue = calculatorState.currentValue;
-        calculatorState.operationString += `${calculatorState.currentValue} ${operation} `;
+        calculatorState.operationString += `${calculatorState.currentValue} ${symbol} `;
     }
     
     calculatorState.currentOperation = operation;
