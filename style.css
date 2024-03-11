@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: #f0f0f3;
 }
 
 #main {
@@ -7,19 +8,28 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    font-family: monospace;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #calculator-container {
-    border: solid;
+    border: solid 2px #bbb;
     height: 600px;
     width: 450px;
+    background-color: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 #screen {
-    border: solid red;
+    border: solid 2px #eaeaea;
+    background-color: #e6e6e6;
     margin: 32px;
     height: 140px;
+    border-radius: 5px;
+}
+
+#small-line, #large-line {
+    color: #333;
 }
 
 #small-line {
@@ -52,6 +62,22 @@ button {
     align-items: center;
     height: 60px;
     width: 95px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button.operator, button.equals {
+    background-color: #ff9500;
+    color: #fff;
+}
+
+button.clear, button.sign, button.percent {
+    background-color: #d4d4d2;
+}
+
+button.operand, button.decimal {
+    background-color: #f2f2f2;
 }
 
 #zero {
