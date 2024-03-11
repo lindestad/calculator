@@ -1,3 +1,5 @@
+# Calculator
+
 ## Introduction
 
 Web-based calculator. This calculator is designed to provide a simple, intuitive interface for performing basic arithmetic operations, including addition, subtraction, multiplication, and division. Inspired by traditional and modern calculators, it also features advanced functionalities such as changing the sign of numbers and calculating percentages. 
