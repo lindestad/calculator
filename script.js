@@ -107,6 +107,14 @@ function handleSign() {
     updateDisplay();
 }
 
+function handleComma() {
+    if (calculatorState.currentValue.includes('.')) {
+        return; // Avoid duplicate commas
+    }
+    calculatorState.currentValue += '.';
+    updateDisplay();
+}
+
 document.querySelector('#button-container').addEventListener('click', (event) => {
     if (!event.target.matches('button')) return;
 
@@ -121,5 +129,7 @@ document.querySelector('#button-container').addEventListener('click', (event) =>
         handleEquals();
     } else if (buttonValue === 'C') {
         handleClear();
+    } else if (buttonValue === '.') {
+        handleComma();
     }
 });
